@@ -47,10 +47,10 @@ namespace ConsoleApp1
                 if (FirstChoice + SecondChoice + DebuffChoice == 30)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("{0}{1}{2}돌이에요~ 다시시작시 0번 입력 하세요", FScnt, SScnt, DScnt);
+                    Console.WriteLine("{0}{1}{2}돌이에요~", FScnt, SScnt, DScnt);
                 }
                 Console.WriteLine();
-                Console.Write("선택하세요(1,2,3입력 0입력시 새돌)/현재 확률{0}% -> ", Percent);
+                Console.Write("선택하세요(1,2,3입력 새돌(0) 확률확인(5)/현재 확률{0}% -> ", Percent);
                 string str = Console.ReadLine();
                 if(str.Trim() == "")
                 {
@@ -61,7 +61,6 @@ namespace ConsoleApp1
                 {
                     choice = int.Parse(str);
                 }
-                
                 
 
                 
@@ -191,6 +190,9 @@ namespace ConsoleApp1
                         }
                     }
                     DebuffChoice++;
+                }else if(choice == 5)
+                {
+                    Console.WriteLine("확률은 {0:0.00}%입니다.", PercentCheck.PercentageCheck(Percent));
                 }
                 else
                 {
